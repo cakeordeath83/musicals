@@ -1,1 +1,6 @@
 <h1>Index for Shows page</h1>
+
+<% @shows.each do |show| %>
+<%= show.name %>
+<%= link_to "Edit", edit_show_path(show) %><br>
+<% end %>
