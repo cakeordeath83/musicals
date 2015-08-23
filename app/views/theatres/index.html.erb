@@ -1,0 +1,8 @@
+<h1>Index page for Theatres</h1>
+
+<% @theatres.each do |theatre| %>
+<%= theatre.name %>
+<%= link_to "Edit", edit_theatre_path(theatre) %><br>
+<% end %>
+<br>
+<%= link_to "Add Theatre", new_theatre_path %>
