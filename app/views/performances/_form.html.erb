@@ -1,0 +1,13 @@
+<%= form_for @performance do |f| %>
+<%= f.label :date %>
+<%= f.date_field :date %><br>
+
+<%= f.label :theatre_id %>
+<%= f.select(:theatre_id, @theatre_options) %><br>
+
+<%= f.label :show_id %>
+<%= f.select(:show_id, @show_options) %><br>
+
+<%= f.submit %><br>
+
+<% end %>

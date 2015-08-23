@@ -1,0 +1,8 @@
+<h1>All performances</h1>
+
+<%@performances.each do |performance| %>
+<%= performance.date %><br>
+<%= performance.show.name %><br>
+<%= performance.theatre.name %><br>
+<%= link_to "Edit", edit_performance_path(performance) %><br> 
+<% end %><br>
