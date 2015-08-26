@@ -1,9 +1,38 @@
-<h1><%= @theatre.name %> theatre</h1>
+<div class="container text-center">
+  <%= image_tag @theatre.picture.url(:medium) %>
+</div>
 
-<%= @theatre.name %><br>
-<%= @theatre.address1 %><br>
-<%= @theatre.address2 %><br>
-<%= @theatre.city %><br>
-<%= @theatre.postcode %><br>
+<div class="container">
+  <div class="text-center">
+    <h1>What we saw at <%= @theatre.name %></h1>
+  </div>
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+            <tr>
+             <th></th>
+             <th>Show</th>
+             <th>Date</th>
+            </tr>
+      </thead>
+      <tbody>
+        
+        <% @performances.find_all{|p| p.theatre_id == @theatre.id}.each do |x| %>
+        <tr>
+          <td><%= image_tag x.show.picture.url(:thumb) %></td>
+          <td><%= x.show.name %></td>
+          <td><%= x.date %></td>
+          
+          <% end %>
+        </tr>
+      </tbody>
 
-<%= link_to "See all theatres", theatres_path %>
+      
+    </table>
+  </div>
+</div>
+
+
+
+
+<button class="btn"><%= link_to "Back to All theatres", theatres_path %></button>

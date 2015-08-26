@@ -4,6 +4,7 @@ class TheatresController < ApplicationController
   
     def index
       @theatres = Theatre.all
+      @performances = Performance.all
     end
   
     def new
@@ -13,13 +14,14 @@ class TheatresController < ApplicationController
     def create
       @theatre = Theatre.new(theatre_params)
       if @theatre.save
-        redirect_to theatre_path(@theatre)
+        redirect_to theatres_path
       else
         render :new
       end
     end
     
     def show
+      @performances = Performance.all
     end
     
     def edit
@@ -27,7 +29,7 @@ class TheatresController < ApplicationController
     
     def update
       if @theatre.update(theatre_params)
-        redirect_to theatre_path(@theatre)
+        redirect_to theatre_path
       else
         render :edit
       end
@@ -44,7 +46,7 @@ class TheatresController < ApplicationController
     end
   
     def theatre_params
-      params.require(:theatre).permit(:name, :address1, :address2, :city, :postcode)
+      params.require(:theatre).permit(:name, :address1, :address2, :city, :postcode, :picture)
     end
 end
 

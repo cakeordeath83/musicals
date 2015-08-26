@@ -1,6 +1,35 @@
-<h1>Show page for <%=@show.name%></h1>
 
-<%= @show.name %>
-<%= image_tag @show.picture.url(:thumb) %>
-<br>
-<%= link_to "All shows", shows_path %>
+<div class="container text-center">
+  <%= image_tag @show.picture.url(:medium) %>
+</div>
+
+<div class="container">
+  <h1>Where we saw <%= @show.name %></h1>
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+            <tr>
+             <th>Date</th>
+             <th>Theatre</th>
+             <th>Place</th>
+            </tr>
+      </thead>
+
+      <tbody>
+        
+          <% @performances.find_all{|p| p.show_id == @show.id}.each do |x| %>
+        <tr>
+          <td><%= x.date %></td>
+          <td><%= x.theatre.name %></td>
+          <td><%= x.theatre.city %></td>
+          <% end %>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+
+<button class="btn"><%= link_to "Back to All shows", shows_path %></button>

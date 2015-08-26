@@ -1,5 +1,7 @@
 
-<div class="container">
+<div class="col-md-2">
+</div>
+<div class="container col-md-8">
   <div class="table-responsive">
     <table class="table">
 
@@ -9,6 +11,7 @@
         <th>Show name</th>
         <th>Date</th>
         <th>Theatre</th>
+        
       </tr>
     </thead>
 
@@ -20,7 +23,6 @@
         <td><%= performance.show.name%></td>  
         <td><%= performance.date %></td>
         <td><%= performance.theatre.name %></td>
-        <td><button><%= link_to "Edit", edit_performance_path(performance) %></button></td>
         <% end %><br>
       </tr>
       </tbody>
@@ -29,4 +31,12 @@
   </div>
 </div>
 
+<div class="col-md-2">
+</div>
+
+
+
+<div class="col-md-3">
 <button><%= link_to "Add a new performance", new_performance_path %></button>
+</div>
+

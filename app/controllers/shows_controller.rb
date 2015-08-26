@@ -5,8 +5,6 @@ class ShowsController < ApplicationController
   def index
     @shows = Show.all
     @performances = Performance.all
-    
-    
   end
   
   def new
@@ -23,7 +21,7 @@ class ShowsController < ApplicationController
   end
   
   def show
-    
+    @performances = Performance.all
   end
   
   def edit
@@ -43,9 +41,11 @@ class ShowsController < ApplicationController
     redirect_to shows_path
   end
   
+ 
   
-  private
-  
+
+private
+    
   def find_show
     @show = Show.find(params[:id])
   end
