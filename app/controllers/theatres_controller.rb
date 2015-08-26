@@ -14,6 +14,8 @@ class TheatresController < ApplicationController
       @theatre = Theatre.new(theatre_params)
       if @theatre.save
         redirect_to theatre_path(@theatre)
+      else
+        render :new
       end
     end
     

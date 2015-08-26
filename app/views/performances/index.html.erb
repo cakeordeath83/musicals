@@ -1,4 +1,4 @@
-<h1>All performances</h1>
+<h1>Musicals App</h1>
 
 <%@performances.each do |performance| %>
 <%= performance.date %><br>
@@ -6,3 +6,5 @@
 <%= performance.theatre.name %><br>
 <button><%= link_to "Edit", edit_performance_path(performance) %></button><br> 
 <% end %><br>
+
+<button><%= link_to "Add a new performance", new_performance_path %></button>

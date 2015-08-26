@@ -48,7 +48,7 @@ class ShowsController < ApplicationController
   end
   
   def show_params
-    params.require(:show).permit(:name)
+    params.require(:show).permit(:name, :picture)
   end
     
   
