@@ -6,12 +6,17 @@ class PerformancesController < ApplicationController
     @performances = Performance.all
   end
   
+  def perfchange
+    @performances = Performance.all
+  end
+  
   def new
     @theatre_options = Theatre.all.map{|t| [t.name, t.id]}
     @show_options = Show.all.map{|s| [s.name, s.id]}
     @performance = Performance.new
   end
 
+ 
   
   def create
     @performance = Performance.new(performance_params)
