@@ -2,6 +2,8 @@
 
 <% @shows.each do |show| %>
 <%= show.name %>
+<p> Number of performances = <%= @performances.find_all{|p| p.show_id == show.id}.count %></p>
+<! Pretty sure that there should be a better way of doing this! !>
 <%= link_to "Edit", edit_show_path(show) %><br>
 <% end %>
 
