@@ -1,6 +1,6 @@
 <h1>Show page for <%=@show.name%></h1>
 
 <%= @show.name %>
-<%= image_tag @show.picture.url %>
+<%= image_tag @show.picture.url(:thumb) %>
 <br>
 <%= link_to "All shows", shows_path %>
