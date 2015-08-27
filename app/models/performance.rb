@@ -4,10 +4,7 @@ class Performance < ActiveRecord::Base
   
  
   
-  accepts_nested_attributes_for :show
-  accepts_nested_attributes_for :theatre
-  
-  
+  validates :date, presence: true
   
   
 end

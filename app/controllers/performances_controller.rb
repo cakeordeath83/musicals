@@ -24,7 +24,7 @@ class PerformancesController < ApplicationController
     if @performance.save
       redirect_to performance_path(@performance)
     else
-      render :new
+      redirect_to new_performance_path
     end
   end
   
