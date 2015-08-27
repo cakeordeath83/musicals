@@ -1,37 +1,37 @@
 
-<div class="col-md-offset-4 col-md-4">
-<%= bootstrap_form_for @performance do |f| %>
+<div class="col-md-offset-3 col-md-5">
+  <%= bootstrap_form_for @performance do |f| %>
   
-  
-    
     <%= f.date_field :date %>
   
- 
-
-  <div>
-    <h3>Choose a theatre below</h3>
-      
-      
-      <%= f.select(:theatre_id, @theatre_options) %>
-      
-    <p>Or</p>
-    <button><%=link_to "Create new theatre", new_theatre_path %></button>
-   </div>
+    <div class="col-md-12">
+      <h3 style="text-align:center;">Choose a theatre below</h3><br>
+        <div class="col-md-6" style="text-align:center;">
+        <%= f.select(:theatre_id, @theatre_options) %>
+        </div>
+        <div class="col-md-2">
+        <p>Or</p><br>
+        </div>
+        <div class="col-md-4>">
+          <button class="btn"><%=link_to "Add a new theatre", new_theatre_path %></button>
+        </div>
+    </div>
   
-  <div>
-    <h3>Choose a show below</h3>
-   
-     
-      <%= f.select(:show_id, @show_options) %>
-    
-    <p>Or</p>
-    <button><%=link_to "Create new show", new_show_path %></button>
-  </div>
+    <div class="col-md-12">
+        <h3 style="text-align:center;">Choose a show below</h3><br>
+          <div class="col-md-6" style="text-align:center;">
+          <%= f.select(:show_id, @show_options) %>
+          </div>
+          <div class="col-md-2">
+          <p>Or</p><br>
+          </div>
+          <div class="col-md-4>">
+            <button class="btn"><%=link_to "Add a new show", new_show_path %></button>
+          </div>
+      </div>
   
-
   
-
-  <%= f.submit %>
+      <div class="col-md-offset-4"><%= f.submit %></div>
 
   <% end %>
   

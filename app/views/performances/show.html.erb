@@ -1,7 +1,14 @@
-<h1>Showing <%= @performance.date %></h1>
+<div class="container">
+  <div class="col-md-offset-3 col-md-6" style="text-align:center;">
+  
 
-<%= @performance.date %><br>
-<%= @performance.theatre.name %><br>
-<%= @performance.show.name %><br>
+     
+    <h5>Date: <%= @performance.date %></h5><br>
+    <h5>Theatre: <%= @performance.theatre.name %></h5><br>
+    <h5>Show: <%= @performance.show.name %></h5><br>
+     <%= image_tag @performance.show.picture.url(:medium) %><br><br><br>
+      
 
-<%= link_to "All performances", performances_path %>
+    <%= link_to "Back to Home", performances_path %>
+  </div>
+</div>

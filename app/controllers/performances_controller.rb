@@ -14,6 +14,7 @@ class PerformancesController < ApplicationController
     @theatre_options = Theatre.all.map{|t| [t.name, t.id]}
     @show_options = Show.all.map{|s| [s.name, s.id]}
     @performance = Performance.new
+    @theatres = Theatre.all
   end
 
  
@@ -55,7 +56,7 @@ class PerformancesController < ApplicationController
   end
   
   def performance_params
-    params.require(:performance).permit(:date, :show_id, :theatre_id)
+    params.require(:performance).permit(:date, :show_id, :theatre_id, theatre_attributes: [:id, :name, :address1, :address2, :city, :postcode])
   end
   
 end
