@@ -22,8 +22,10 @@ class PerformancesController < ApplicationController
   def create
     @performance = Performance.new(performance_params)
     if @performance.save
+      flash[:success]="Performance was saved"
       redirect_to performance_path(@performance)
     else
+      flash[:error]="Performance was not saved"
       redirect_to new_performance_path
     end
   end
