@@ -14,8 +14,10 @@ class ShowsController < ApplicationController
   def create
     @show = Show.new(show_params)
     if @show.save
+      flash[:success]="Show was saved"
       redirect_to shows_path
     else
+      flash[:error]="Show was not saved"
       render :new
     end
   end
@@ -30,8 +32,10 @@ class ShowsController < ApplicationController
   
   def update
     if @show.update(show_params)
+      flash[:success]="Show was updated"
       redirect_to show_path
     else
+      flash[:success]="Show was not updated, please try again"
       render :edit
     end
   end

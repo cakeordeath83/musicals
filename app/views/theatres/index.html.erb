@@ -1,22 +1,43 @@
-<div class="container">
-  <h1>All Theatres</h1>
+<h1>All Theatres</h1>
 
-  <div class="row theatre-row">
-     <% @theatres.each do |theatre| %>
-       <div class="col-md-4" id="theatre">
-           <h4><%= theatre.name %></h4>
-           <p><%= theatre.city %></p>
-             
-               <% @performances.find_all{|p| p.theatre_id == theatre.id}.each do |x| %>
-         <p><%= image_tag x.show.picture.url(:thumb)%></p> 
-         <p><%=x.date%></p>
-        
-                
-             
-               <% end %>  
-             
-       </div>
-     <% end %>
-    
+<div class="col-md-2">
+</div>
+<div class="container col-md-8">
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+            <tr>
+              <th>Theatre</th>
+              <th>Number of times visited</th>
+              <th>Shows seen</th>
+              <th></th>
+            </tr>
+      </thead>
+
+      <tbody>
+        <% @theatres.each do |theatre| %>
+          <tr>
+            <td><%= theatre.name %></td>
+            <td><%= link_to @performances.find_all{|p| p.theatre_id == theatre.id}.count, theatre_path(theatre) %></td>
+           
+              <td>
+                <% @performances.find_all{|p| p.theatre_id == theatre.id}.each do |perf| %>
+                <li><%= perf.show.name %></li>
+                <% end %>
+              </td>
+              
+            
+            <!-- Pretty sure that there should be a better way of doing this! -->
+            <td><button class="button"><%= link_to "Edit", edit_theatre_path(theatre) %></button></td>
+        <% end %>
+      </tbody>
+    </table>
   </div>
 </div>
+
+<div class="col-md-2">
+</div>
+
+<div class="col-md-3">
+  <button class="button"><%= link_to "Add new theatre", new_theatre_path %></button>
+  </div>

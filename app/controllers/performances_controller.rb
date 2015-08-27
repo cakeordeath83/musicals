@@ -40,8 +40,10 @@ class PerformancesController < ApplicationController
   
   def update
     if @performance.update(performance_params)
+      flash[:success]="Performance was updated"
       redirect_to performances_path
     else
+      flash[:error]="Performance was not updated"
       render 'edit'
     end
   end

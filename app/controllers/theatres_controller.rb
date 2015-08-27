@@ -14,8 +14,10 @@ class TheatresController < ApplicationController
     def create
       @theatre = Theatre.new(theatre_params)
       if @theatre.save
+        flash[:success]="Theatre was saved"
         redirect_to theatres_path
       else
+        flash[:error]="Theatre was not saved"
         render :new
       end
     end
@@ -29,8 +31,10 @@ class TheatresController < ApplicationController
     
     def update
       if @theatre.update(theatre_params)
+        flash[:success]="Theatre was updated"
         redirect_to theatre_path
       else
+        flash[:error]="Theatre was not updated, please try again"
         render :edit
       end
     end
