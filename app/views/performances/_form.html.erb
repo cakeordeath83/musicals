@@ -1,23 +1,29 @@
-<div class="container">
-  <%= form_for @performance do |f| %>
-  
-  <div class="col-md-3">
-    <%= f.label :date %>
-    <%= f.date_field :date %>
-  </div>
 
-  <div class="col-md-3">
+<div class="col-md-offset-4 col-md-4">
+<%= bootstrap_form_for @performance do |f| %>
+  
+  
+    
+    <%= f.date_field :date %>
+  
+ 
+
+  <div>
     <h3>Choose a theatre below</h3>
-    <%= f.label :theatre_id %>
-    <%= f.select(:theatre_id, @theatre_options) %>
+      
+      
+      <%= f.select(:theatre_id, @theatre_options) %>
+      
     <p>Or</p>
     <button><%=link_to "Create new theatre", new_theatre_path %></button>
-  </div>
+   </div>
   
-  <div class="col-md-3">
+  <div>
     <h3>Choose a show below</h3>
-    <%= f.label :show_id %>
-    <%= f.select(:show_id, @show_options) %>
+   
+     
+      <%= f.select(:show_id, @show_options) %>
+    
     <p>Or</p>
     <button><%=link_to "Create new show", new_show_path %></button>
   </div>
@@ -25,7 +31,9 @@
 
   
 
-  <%= f.submit %><br>
+  <%= f.submit %>
 
   <% end %>
+  
 </div>
+

@@ -1,16 +1,62 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/* HTML */
+html {
+  position: relative;
+  min-height: 100%;
+  padding-bottom: 40px;
+}
 
+/* Navigation */
+
+.navbar {
+  background-color: #3D0052;
+   
+}
+
+#home > li > a {
+  color: white;
+}
+
+body > nav > div > div.navbar-header > p > a {
+    color: white;
+}
+
+/* Body */
+
+body {
+  padding-top: 100px;
+  margin: auto;
+}
 
 #theatre {
-  
+    text-align: center;
+}
+
+
+/* Headers */
+h1 {
   text-align: center;
 }
 
 
+/* Tables */
 
 .table > tbody > tr > td {
      vertical-align: middle;
 }
 
+/* Footer */
+
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #3D0052;
+  padding: 15px;
+  margin-top: 20px;
+}
