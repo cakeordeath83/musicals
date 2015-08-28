@@ -50,7 +50,7 @@ class TheatresController < ApplicationController
     end
   
     def theatre_params
-      params.require(:theatre).permit(:name, :address1, :address2, :city, :postcode, :picture)
+      params.require(:theatre).permit(:name, :address, :address2, :city, :postcode, :picture)
     end
 end
 

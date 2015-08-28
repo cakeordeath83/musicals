@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150828072859) do
+ActiveRecord::Schema.define(version: 20150828074920) do
 
   create_table "performances", force: :cascade do |t|
     t.date     "date"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20150828072859) do
 
   create_table "theatres", force: :cascade do |t|
     t.string   "name"
-    t.string   "address1"
+    t.string   "address"
     t.string   "address2"
     t.string   "city"
     t.string   "postcode"
