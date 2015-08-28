@@ -11,8 +11,8 @@ class PerformancesController < ApplicationController
   end
   
   def new
-    @theatre_options = Theatre.all.map{|t| [t.name, t.id]}
-    @show_options = Show.all.map{|s| [s.name, s.id]}
+    @theatre_options = Theatre.all.sort_by{|t| t.name}.map{|t| [t.name, t.id]}
+    @show_options = Show.all.sort_by{|s| s.name}.map{|s| [s.name, s.id]}
     @performance = Performance.new
     @theatres = Theatre.all
   end
@@ -34,8 +34,8 @@ class PerformancesController < ApplicationController
   end
   
   def edit
-    @theatre_options = Theatre.all.map{|t| [t.name, t.id]}
-    @show_options = Show.all.map{|s| [s.name, s.id]}
+    @theatre_options = Theatre.all.sort_by{|t| t.name}.map{|t| [t.name, t.id]}
+    @show_options = Show.all.sort_by{|s| s.name}.map{|s| [s.name, s.id]}
   end
   
   def update

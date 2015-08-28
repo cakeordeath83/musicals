@@ -18,7 +18,7 @@
       </thead>
 
       <tbody>
-        <% @theatres.each do |theatre| %>
+        <% @theatres.sort_by{|t| t.name}.each do |theatre| %>
           <tr>
             <td class="col-md-2"><%= link_to theatre.name, theatre_path(theatre) %></td>
             <td class="col-md-1"><%= @performances.find_all{|p| p.theatre_id == theatre.id}.count%></td>
@@ -31,7 +31,7 @@
               
             
             <!-- Pretty sure that there should be a better way of doing this! -->
-            <td class="col-md-1"><button class="button"><%= link_to "Edit", edit_theatre_path(theatre) %></button></td>
+            <td class="col-md-1"><button class="btn"><%= link_to "Edit", edit_theatre_path(theatre) %></button></td>
         <% end %>
       </tbody>
     </table>
