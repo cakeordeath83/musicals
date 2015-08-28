@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150826104356) do
+ActiveRecord::Schema.define(version: 20150828072859) do
 
   create_table "performances", force: :cascade do |t|
     t.date     "date"
@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(version: 20150826104356) do
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
 end

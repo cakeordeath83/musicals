@@ -22,7 +22,7 @@
            
               <td>
                 <% @performances.find_all{|p| p.theatre_id == theatre.id}.each do |perf| %>
-                <li><%= perf.show.name %></li>
+                <li><%= perf.show.name %> - <%= perf.date%></li>
                 <% end %>
               </td>
               
