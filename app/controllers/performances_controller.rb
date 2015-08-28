@@ -3,7 +3,7 @@ class PerformancesController < ApplicationController
   before_action :find_performance, only:[:edit, :show, :update, :destroy]
   
   def index
-    @performances = Performance.all
+    @performances = Performance.all.sort_by{|p| p.date}.reverse
   end
   
   def perfchange
@@ -60,7 +60,7 @@ class PerformancesController < ApplicationController
   end
   
   def performance_params
-    params.require(:performance).permit(:date, :show_id, :theatre_id, theatre_attributes: [:id, :name, :address1, :address2, :city, :postcode])
+    params.require(:performance).permit(:date, :show_id, :theatre_id)
   end
   
 end
