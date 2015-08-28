@@ -1,8 +1,11 @@
 <h1>All Theatres</h1>
 
-<div class="col-md-2">
-</div>
-<div class="container col-md-8">
+<div class="addbutton">
+  <button class="btn btn-default"><%= link_to "Add new theatre", new_theatre_path %></button>
+  </div>
+
+
+<div class="container col-md-offset-3 col-md-6">
   <div class="table-responsive">
     <table class="table">
       <thead>
@@ -17,10 +20,10 @@
       <tbody>
         <% @theatres.each do |theatre| %>
           <tr>
-            <td><%= theatre.name %></td>
-            <td><%= link_to @performances.find_all{|p| p.theatre_id == theatre.id}.count, theatre_path(theatre) %></td>
+            <td class="col-md-2"><%= theatre.name %></td>
+            <td class="col-md-1"><%= link_to @performances.find_all{|p| p.theatre_id == theatre.id}.count, theatre_path(theatre) %></td>
            
-              <td>
+              <td class="col-md-4">
                 <% @performances.find_all{|p| p.theatre_id == theatre.id}.each do |perf| %>
                 <li><%= perf.show.name %> - <%= perf.date%></li>
                 <% end %>
@@ -28,16 +31,10 @@
               
             
             <!-- Pretty sure that there should be a better way of doing this! -->
-            <td><button class="button"><%= link_to "Edit", edit_theatre_path(theatre) %></button></td>
+            <td class="col-md-1"><button class="button"><%= link_to "Edit", edit_theatre_path(theatre) %></button></td>
         <% end %>
       </tbody>
     </table>
   </div>
 </div>
 
-<div class="col-md-2">
-</div>
-
-<div class="col-md-3">
-  <button class="button"><%= link_to "Add new theatre", new_theatre_path %></button>
-  </div>

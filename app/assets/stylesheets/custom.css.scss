@@ -17,10 +17,12 @@ html {
 
 #home > li > a {
   color: white;
+  font-size: 15px;
 }
 
 body > nav > div > div.navbar-header > p > a {
     color: white;
+  font-size: 20px;
 }
 
 /* Body */
@@ -34,6 +36,12 @@ body {
     text-align: center;
 }
 
+/* Button */
+
+.addbutton {
+  float: right;
+  margin-right: 10%;
+}
 
 /* Headers */
 h1 {

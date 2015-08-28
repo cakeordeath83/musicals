@@ -19,10 +19,10 @@
               <tbody>
                 <% perf.sort_by{|p| p.date}.reverse.each do |performance| %>
                   <tr>
-                    <td><%= link_to (image_tag performance.show.picture.url(:thumb)), show_path(performance.show.id) %></td>
-                    <td><h5><%= link_to performance.show.name, show_path(performance.show)%></h5></td>  
-                    <td><%= link_to performance.date, performance_path(performance) %></td>
-                    <td><h5><%= link_to performance.theatre.name, theatre_path(performance.theatre) %></h5><p><%= performance.theatre.city%></p></td>
+                    <td class="col-md-2"><%= link_to (image_tag performance.show.picture.url(:thumb)), show_path(performance.show.id) %></td>
+                    <td class="col-md-2"><h5><%= link_to performance.show.name, show_path(performance.show)%></h5></td>  
+                    <td class="col-md-2"><%= link_to performance.date, performance_path(performance) %></td>
+                    <td class="col-md-2"><h5><%= link_to performance.theatre.name, theatre_path(performance.theatre) %></h5><p><%= performance.theatre.city%></p></td>
                   </tr>
                 <% end %>
               </tbody>
