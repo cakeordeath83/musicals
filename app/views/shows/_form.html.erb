@@ -1,6 +1,12 @@
-<%= form_for @show do |f| %>
-<%= f.label :name %>
+
+<div class="col-md-offset-4 col-md-4">
+  
+
+<%= bootstrap_form_for @show do |f| %>
+
 <%= f.text_field :name %>
 <%= f.file_field :picture %>
-<%= f.submit %>
+  <br>
+  <div class="col-md-offset-4"><%= f.submit %></div>
 <% end %>
+</div>

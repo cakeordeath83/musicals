@@ -18,7 +18,7 @@ class TheatresController < ApplicationController
       
       if @theatre.save
         flash[:success]="Theatre was saved"
-        redirect_to theatres_path
+        redirect_to theatre_path(@theatre)
       else
         flash[:error]="Theatre was not saved"
         render :new

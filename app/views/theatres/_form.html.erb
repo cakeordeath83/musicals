@@ -1,11 +1,14 @@
-<%= form_for @theatre do |f| %>
 
-<%= f.label :name %>
-<%= f.text_field :name %><br>
 
-<%= f.label :city %>
-<%= f.text_field :city %><br>
+<div class="col-md-offset-4 col-md-4">
+  <%= bootstrap_form_for @theatre do |f| %>
 
-<%= f.submit %>
+    
+    <%= f.text_field :name %><br>
 
-<% end %>
+    
+    <%= f.text_field :city %><br>
+  <br>  
+    <div class="col-md-offset-4"><%= f.submit %></div>
+  <% end %>
+</div>

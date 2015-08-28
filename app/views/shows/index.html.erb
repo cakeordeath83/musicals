@@ -4,7 +4,6 @@
 <button class="btn btn-default"><%= link_to "Add new show", new_show_path %></button>
   </div>
 
-
 <div class="container col-md-offset-3 col-md-6">
   <div class="table-responsive">
     <table class="table">
@@ -20,7 +19,7 @@
       <tbody>
        <% @shows.each do |show| %>
           <tr>
-            <td class="col-md-2"><%= link_to (image_tag show.picture.url(:thumb)), show_path(show) %></td>
+            <td class="col-md-1"><%= link_to (image_tag show.picture.url(:thumb)), show_path(show) %></td>
             <td class="col-md-2"><%= show.name %></td>
             <td class="col-md-1"><%= link_to @performances.find_all{|p| p.show_id == show.id}.count, show_path(show) %></td>
             <!-- Pretty sure that there should be a better way of doing this! -->
