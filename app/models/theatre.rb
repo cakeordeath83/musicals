@@ -4,8 +4,19 @@ class Theatre < ActiveRecord::Base
   
   validates :name, presence: true, uniqueness: true
   
-  geocoded_by :name
+  
+  
+  geocoded_by :theatreadd
   after_validation :geocode
-  reverse_geocoded_by :latitude, :longitude 
+  reverse_geocoded_by :latitude, :longitude do |obj, results|
+    if geo = results.first
+      obj.address = geo.address
+      
+    end
+  end
   after_validation :fetch_address
+  
+  def theatreadd
+    theatreadd = "#{self.name} + #{self.city}"
+  end
 end

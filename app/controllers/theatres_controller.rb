@@ -2,6 +2,7 @@ class TheatresController < ApplicationController
   
   before_action :find_theatre, only:[:show, :edit, :update, :destroy]
   
+  
     def index
       @theatres = Theatre.all
       @performances = Performance.all
@@ -9,10 +10,12 @@ class TheatresController < ApplicationController
   
     def new
       @theatre = Theatre.new
+     
     end
   
     def create
       @theatre = Theatre.new(theatre_params)
+      
       if @theatre.save
         flash[:success]="Theatre was saved"
         redirect_to theatres_path
@@ -27,10 +30,13 @@ class TheatresController < ApplicationController
     end
     
     def edit
+     
     end
     
     def update
+      
       if @theatre.update(theatre_params)
+       
         flash[:success]="Theatre was updated"
         redirect_to theatre_path
       else
@@ -50,8 +56,10 @@ class TheatresController < ApplicationController
     end
   
     def theatre_params
-      params.require(:theatre).permit(:name, :address, :address2, :city, :postcode, :picture)
+      params.require(:theatre).permit(:name, :address, :address2, :city, :postcode, :picture,)
     end
+  
+  
 end
 
 
