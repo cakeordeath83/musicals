@@ -46,8 +46,12 @@ class TheatresController < ApplicationController
     end
     
       def destroy
-        @theatre.destroy
+        if @theatre.destroy
         redirect_to theatres_path
+        else
+          flash[:error]="Theatre wasn't deleted. Is it still associated with a performance? If so please delete the performance first"
+          redirect_to theatres_path
+        end
       end
  private
     

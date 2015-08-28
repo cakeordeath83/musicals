@@ -35,14 +35,19 @@ class ShowsController < ApplicationController
       flash[:success]="Show was updated"
       redirect_to show_path
     else
-      flash[:success]="Show was not updated, please try again"
+      flash[:error]="Show was not updated, please try again"
       render :edit
     end
   end
   
   def destroy
-    @show.destroy
+   
+    if @show.destroy
     redirect_to shows_path
+    else
+      flash[:error]="Show wasn't deleted. Is is still associated with a performance? Please delete the performance first"
+      redirect_to shows_path
+    end
   end
   
  
