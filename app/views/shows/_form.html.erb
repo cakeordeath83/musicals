@@ -2,7 +2,7 @@
 <div class="col-md-offset-4 col-md-4">
   
 
-  <%= bootstrap_form_for (@show) do |f| %>
+  <%= bootstrap_form_for (@show, multipart: true) do |f| %>
 
 <%= f.text_field :name %>
 <%= f.file_field :picture %>
