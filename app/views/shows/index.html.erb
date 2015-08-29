@@ -17,7 +17,7 @@
       </thead>
 
       <tbody>
-       <% @shows.each do |show| %>
+        <% @shows.sort_by{|s| s.name}.each do |show| %>
           <tr>
             <td class="col-md-1 images"><%= link_to (image_tag show.picture.url(:thumb)), show_path(show) %></td>
             <td class="col-md-2"><%= show.name %></td>
