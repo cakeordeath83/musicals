@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150828074920) do
+ActiveRecord::Schema.define(version: 20150829095325) do
 
   create_table "performances", force: :cascade do |t|
     t.date     "date"
@@ -48,6 +48,22 @@ ActiveRecord::Schema.define(version: 20150828074920) do
     t.datetime "picture_updated_at"
     t.float    "latitude"
     t.float    "longitude"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "email"
+    t.string   "password_digest"
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email"
+
+  create_table "visitors", force: :cascade do |t|
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end

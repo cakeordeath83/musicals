@@ -1,0 +1,11 @@
+<div class="col-md-offset-4 col-md-4">
+  
+  <h1>Sign In</h1>
+  <%= bootstrap_form_for(:session, url: login_path) do |f| %> 
+  <%= f.email_field :email, :placeholder => "Email" %> 
+  <%= f.password_field :password, :placeholder => "Password" %> 
+  <%= f.submit "Log in", class: "btn-submit" %>
+<% end %>
+</div>
+
+<!-- From here it doesn't want to even run the server -->
