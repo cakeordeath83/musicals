@@ -1,7 +1,7 @@
 class TheatresController < ApplicationController
   
   before_action :find_theatre, only:[:show, :edit, :update, :destroy]
-  
+  before_action :require_visitor
   
     def index
       @theatres = Theatre.all

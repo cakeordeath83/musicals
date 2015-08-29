@@ -8,7 +8,7 @@ class VisitorsController < ApplicationController
     @visitor = Visitor.new(visitor_params)
       if @visitor.save
         session[:visitor_id] = @visitor.id
-        redirect_to '/'
+        redirect_to performances_path
       else
         redirect_to signup_path
       end

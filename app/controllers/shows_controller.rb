@@ -1,6 +1,7 @@
 class ShowsController < ApplicationController
   
   before_action :find_show, only:[:edit, :update, :show, :destroy]
+  before_action :require_visitor
   
   def index
     @shows = Show.all

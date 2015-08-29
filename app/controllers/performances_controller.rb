@@ -1,7 +1,7 @@
 class PerformancesController < ApplicationController
   
   before_action :find_performance, only:[:edit, :show, :update, :destroy]
-  before_action :require_visitor, only:[:index, :show]
+  before_action :require_visitor
   
   def index
     @performances = Performance.all.sort_by{|p| p.date}.reverse
