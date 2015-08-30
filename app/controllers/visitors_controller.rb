@@ -10,7 +10,7 @@ class VisitorsController < ApplicationController
         session[:visitor_id] = @visitor.id
         redirect_to performances_path
       else
-        redirect_to signup_path
+        redirect_to signuuup_path
       end
   end
   
