@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   # Example of regular route:
   get '/perfchange' => 'performances#perfchange'
-  get '/signuuup' => 'visitors#new'
+  get '/signup' => 'visitors#new'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
