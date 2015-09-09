@@ -187,7 +187,7 @@ DEPENDENCIES
   geocoder (~> 1.2.9)
   jbuilder (~> 2.0)
   jquery-rails
-  paperclip (~> 4.3.0)
+  paperclip (~> 4.3)
   pg
   pry
   rails (= 4.2.3)
