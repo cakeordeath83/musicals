@@ -10,9 +10,13 @@ class SessionsController < ApplicationController
     
     if @visitor && @visitor.authenticate(params[:session][:password])
       session[:visitor_id] = @visitor.id
+      flash[:success]="Welcome #{@visitor.email}"
       redirect_to performances_path
     else
-      redirect_to shows_path
+      
+      flash[:error]="Name or password are incorrect, please try again"
+        
+      render :new
     end
   end
   

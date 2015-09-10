@@ -4,7 +4,7 @@
   <h5 style="text-align:center;"><%= @theatre.address %></h5>
   <p style="text-align:center;"><%= image_tag "https://maps.googleapis.com/maps/api/staticmap?size=550x400&sensor=false&zoom=15&markers=#{@theatre.latitude}%2C#{@theatre.longitude}" %></p>
   <div class="col-md-offset-5">
-    <button class="btn"><%= link_to "Edit theatre", edit_theatre_path(@theatre) %></button>
+    <%= link_to "Edit theatre", edit_theatre_path(@theatre),  :class => "btn btn-primary" %>
     </div>
 </div>
 
@@ -35,7 +35,7 @@
     </table>
   </div>
   <div class="col-md-offset-4">
-  <button class="btn"><%= link_to "Back to All theatres", theatres_path %></button>
+  <%= link_to "Back to All theatres", theatres_path, :class => "btn btn-primary" %>
   
 </div>
 </div>

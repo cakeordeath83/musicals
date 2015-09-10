@@ -8,21 +8,43 @@ html {
   padding-bottom: 40px;
 }
 
+a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+a {
+  color: black;
+}
+
+* {
+  font-family: verdana, arial, helvetica, sans-serif;
+}
+
 /* Navigation */
 
 .navbar {
   background-color: #3D0052;
-   
-}
+  font-size: 15px;
+ }
 
 #home > li > a {
   color: white;
   font-size: 15px;
+  padding-top: 15px;
 }
+
 
 body > nav > div > div.navbar-header > p > a {
     color: white;
   font-size: 20px;
+  padding-top: 20px;
+  
+}
+
+/* FLASH MESSAGES */
+.flashes {
+  margin-top: -20px;
 }
 
 /* Body */
@@ -47,6 +69,34 @@ body {
   float: right;
   margin-right: 10%;
 }
+
+.my-btn {
+  //@include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+  @include button-variant(white, #845E92, #2B0039);
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
+
+  background-color: #3D0052;
+  border-color: #2B0039;
+  color: white;
+ }
+
+.btn
+{
+  background-color: #845E92;
+  border-color: #2B0039;
+  color: white;
+}
+
+/* Forms */
+
+.form {
+  margin-top: 30px; 
+  padding: 20px; 
+  border: 1px solid gray;
+}
+
 
 /* Headers */
 h1 {

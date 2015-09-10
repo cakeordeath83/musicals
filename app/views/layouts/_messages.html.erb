@@ -1,4 +1,5 @@
-<% flash.each do |name, msg| %>
+<div class="flashes">
+     <% flash.each do |name, msg| %>
   <% if msg.is_a?(String) %>
 <% if name == "error" %>
       <div class="alert alert-danger">
@@ -10,3 +11,4 @@
     </div>
   <% end %>
 <% end %>
+</div>

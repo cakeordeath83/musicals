@@ -2,32 +2,37 @@
 <div class="container text-center">
   <%= image_tag @show.picture.url(:medium) %>
 </div>
-<button class="btn addbutton"><%= link_to "Back to All shows", shows_path %></button>
 
-<div class="container">
+<div class="addbutton"><%= link_to "Back to All shows", shows_path, :class => "btn" %></div>
+
+<div class="container" style="margin-top:15px;">
   <h1>Where we saw <%= @show.name %></h1>
   
-  <div class="table-responsive">
-    <table class="table">
-      <thead>
-            <tr>
-             <th>Date</th>
-             <th>Theatre</th>
-             <th>Place</th>
-            </tr>
-      </thead>
+  <div class="row">
+     <div class=" col-md-offset-2 col-md-8" style="margin-top:15px;">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+                  <tr>
+                   <th>Date</th>
+                   <th>Theatre</th>
+                   <th>Place</th>
+                  </tr>
+            </thead>
 
-      <tbody>
-        
-          <% @performances.find_all{|p| p.show_id == @show.id}.each do |x| %>
-        <tr>
-          <td><%= x.date %></td>
-          <td><%= x.theatre.name %></td>
-          <td><%= x.theatre.city %></td>
-          <% end %>
-        </tr>
-      </tbody>
-    </table>
+            <tbody>
+
+                <% @performances.find_all{|p| p.show_id == @show.id}.each do |x| %>
+              <tr>
+                <td><%= x.date %></td>
+                <td><%= x.theatre.name %></td>
+                <td><%= x.theatre.city %></td>
+                <% end %>
+              </tr>
+            </tbody>
+          </table>
+       </div>
+     </div>
   </div>
 </div>
 
