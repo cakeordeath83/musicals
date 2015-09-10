@@ -4,8 +4,13 @@ class TheatresController < ApplicationController
   before_action :require_visitor
   
     def index
-      @theatres = Theatre.all
-      @performances = Performance.all
+      if params[:search]
+        @theatres = Theatre.search(params[:search])
+        @performances = Performance.all
+      else
+        @theatres = Theatre.all
+        @performances = Performance.all
+      end
     end
   
     def new

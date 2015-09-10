@@ -4,8 +4,14 @@ class ShowsController < ApplicationController
   before_action :require_visitor
   
   def index
-    @shows = Show.all
-    @performances = Performance.all
+    if params[:search]
+      @shows = Show.search(params[:search])
+      @performances = Performance.all
+    else
+      @shows = Show.all
+      @performances = Performance.all
+    end
+    
   end
   
   def new

@@ -23,9 +23,35 @@
       <ul class="nav navbar-nav navbar-left" id="home">
         <li><%= link_to "All shows", shows_path %></li>
         <li><%= link_to "All theatres", theatres_path %></li>
+          
+       
       </ul>
     </div>
-
+    
+    <div class="col-md-offset-5">
+      <% if params[:controller] == "shows"%>
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+           <%= form_tag(shows_path, :method => "get", class: "navbar-form") do %>
+           <%= text_field_tag :search, params[:search], placeholder: "Search Shows" %>
+           </div>
+              <button class="btn btn-primary" type="submit">Search</button>
+           <% end %>
+        </form>
+      <% elsif params[:controller] == "theatres" %>
+        <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+              <%= form_tag(theatres_path, :method => "get", class: "navbar-form") do %>
+              <%= text_field_tag :search, params[:search], placeholder: "Search Theatres" %>
+             </div>
+                <button class="btn btn-primary" type="submit">Search</button>
+             <% end %>
+         </form>
+      <% end %>
+     </div>
+      
+      
+          
     <!-- Collect the nav links, forms, and other content for toggling -->
   
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

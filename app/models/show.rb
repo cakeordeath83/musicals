@@ -6,6 +6,9 @@ class Show < ActiveRecord::Base
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\Z/
   validates :name, presence: true, uniqueness: true
  
-  
+  def self.search(query)
+    # where(:title, query) -> This would return an exact match of the query
+    where("name like ?", "%#{query}%") 
+  end
   
 end
