@@ -29,7 +29,7 @@
     </div>
     
     <div class="col-md-offset-5">
-      <% if params[:controller] == "shows"%>
+			<% if params[:controller] == "shows" && params[:action] == "index" %>
         <form class="navbar-form navbar-left" role="search">
           <div class="form-group">
            <%= form_tag(shows_path, :method => "get", class: "navbar-form") do %>
@@ -38,7 +38,7 @@
               <button class="btn btn-primary" type="submit">Search</button>
            <% end %>
         </form>
-      <% elsif params[:controller] == "theatres" %>
+			<% elsif params[:controller] == "theatres" && params[:action] == "index"%>
         <form class="navbar-form navbar-left" role="search">
             <div class="form-group">
               <%= form_tag(theatres_path, :method => "get", class: "navbar-form") do %>
