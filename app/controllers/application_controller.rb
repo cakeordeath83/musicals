@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
     current_visitor ||= Visitor.find(session[:visitor_id]) if session[:visitor_id]
   end
   
+  
   def require_visitor
     redirect_to login_path unless current_visitor
   end
